@@ -27,7 +27,7 @@
 	"linux": {
 	  "target": ["AppImage"],
 	  "category": "Utility",
-	  "icon": "./img/favicon.png",
+	  "icon": "./assets/img/favicon.png",
 	  "artifactName": "openmohaa_server_setup.AppImage"
 	}
   },
