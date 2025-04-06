@@ -1,0 +1,430 @@
+<html>
+	<head>
+		<title>OpenMoHAA Server Setup Utility</title>
+		<link rel="stylesheet" type="text/css" href="./assets/styles.css">
+	</head>
+	<body>
+		<header>
+			<button type="button" id="menu">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+					<path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M4 18h16M4 12h16M4 6h16"/>
+				</svg>
+			</button>
+			<img src="assets/img/logo-white.svg" width="100" />
+			<h1>Server Setup Utility</h1>
+			<nav>
+				<ul>
+					<li data-tab="general" class="active">
+						<span>General</span>
+					</li>
+					<li data-tab="network-options">
+						<span>Network Options</span>
+					</li>
+					<li data-tab="game-options">
+						<span>Game Options</span>
+					</li>
+					<li data-tab="chat-options">
+						<span>Chat Options</span>
+					</li>
+					<li data-tab="custom-config">
+						<span>Custom Configuration</span>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<form>
+				<fieldset data-tab="general" class="active">
+					<strong>General</strong>
+					<label>
+						<span>Game</span>
+						<select name="com_target_game">
+							<option value="0" data-image="aa.png" data-game="aa">Allied Assault</option>
+							<option value="1" data-image="sh.png" data-game="sh">Spearhead</option>
+							<option value="2" data-image="bt.png" data-game="bt">Breakthrough</option>
+						</select>
+					</label>
+					<label>
+						<span>Server Name</span>
+						<br />
+						<input type="text" name="sv_hostname" />
+					</label>
+					<label>
+						<span>RCON Password</span>
+						<br />
+						<input type="password" name="rconpassword" />
+					</label>
+					<label>
+						<span>Private Password</span>
+						<br />
+						<input type="password" name="sv_privatePassword" />
+					</label>
+					<label>
+						<span>Max Clients</span>
+						<br />
+						<input type="number" name="sv_maxclients" value="16" min="0" max="64" />
+					</label>
+					<label>
+						<span>Private Clients</span>
+						<br />
+						<input type="number" name="sv_privateClients" value="0" min="0" max="64" />
+					</label>
+					<label>
+						<span>Max Bots</span>
+						<br />
+						<input type="number" name="sv_maxbots" value="16" min="0" max="64" />
+					</label>
+					<label>
+						<span>Number of Bots</span>
+						<br />
+						<input type="number" name="sv_numbots" value="16" min="0" max="64" />
+					</label>
+					<label>
+						<span>Minimum Players/Bots</span>
+						<br />
+						<input type="number" name="sv_minPlayers" value="16" min="0" max="64" />
+					</label>
+				</fieldset>
+				<fieldset data-tab="network-options">
+					<strong>Network Options</strong>
+					<label>
+						<span>IP Mode</span>
+						<select name="net_enabled">
+							<option value="1">IPv4</option>
+							<option value="2">IPv6</option>
+							<option value="3" selected>IPv4 + IPv6</option>
+						</select>
+						<small>WARNING: Server won't list in master server with IPv4 disabled!</small>
+					</label>
+					<label>
+						<span>Net Port</span>
+						<br />
+						<input type="number" name="net_port" value="12203" />
+					</label>
+					<label>
+						<span>Minimum Ping</span>
+						<br />
+						<input type="number" name="sv_minping" value="0" />
+					</label>
+					<label>
+						<span>Maximum Ping</span>
+						<br />
+						<input type="number" name="sv_maxping" value="0" />
+					</label>
+					<label>
+						<span>Maximum Rate</span>
+						<br />
+						<input type="number" name="sv_maxrate" value="0" />
+					</label>
+					<label>
+						<span>Server Framerate</span>
+						<br />
+						<input type="number" name="sv_fps" value="20" />
+					</label>
+					<label>
+						<span>Network Optimization</span>
+						<select name="sv_netoptimize">
+							<option value="0">Disabled</option>
+							<option value="1">Enabled (moving entities only)</option>
+							<option value="2">Enabled (always)</option>
+						</select>
+					</label>
+					<label>
+						<input type="checkbox" name="sv_floodProtection" value="1" />
+						<span>Flood Protection</span>
+					</label>
+					<label>
+						<input type="checkbox" name="sv_gamespy" value="1" />
+						<span>Show in Master Server List</span>
+					</label>
+				</fieldset>
+				<fieldset data-tab="game-options">
+					<strong>Game Options</strong>
+					<label>
+						<span>Game Type</span>
+						<select name="g_gametype">
+							<option value="1" data-game="aa">Free For All</option>
+							<option value="2" data-game="aa">Team Deathmatch</option>
+							<option value="3" data-game="aa">Round Based</option>
+							<option value="4" data-game="aa">Objective</option>
+							<option value="5" data-game="sh">Tug-of-War</option>
+							<option value="6" data-game="bt">Liberation</option>
+						</select>
+					</label>
+					<label>
+						<input type="checkbox" name="g_healthdrop" value="1" checked />
+						<span>Health Drop</span>
+					</label>
+					<label>
+						<input type="checkbox" name="g_realismmode" value="1" />
+						<span>Realism Mode</span>
+					</label>
+					<label>
+						<input type="checkbox" name="g_teamdamage" value="1" />
+						<span>Team Damage</span>
+					</label>
+					<label>
+						<input type="checkbox" name="g_teambalance" value="1" />
+						<span>Balance Teams</span>
+					</label>
+					<label>
+						<input type="checkbox" name="g_forceteamspectate" value="1" checked />
+						<span>Force Team Spectate</span>
+					</label>
+					<label>
+						<input type="checkbox" name="g_forceready" value="1" />
+						<span>Force Ready</span>
+					</label>
+					<label>
+						<input type="checkbox" name="g_forcespawn" value="1" />
+						<span>Force Spawn</span>
+					</label>
+					<label>
+						<input type="checkbox" name="g_allowvote" value="1" />
+						<span>Allow Voting</span>
+					</label>
+					<label>
+						<span>Heal Rate</span>
+						<select name="g_healrate">
+							<option value="0">Instant</option>
+							<option value="5">5 per sec</option>
+							<option value="10">10 per sec</option>
+							<option value="20">20 per sec</option>
+						</select>
+					</label>
+					<label>
+						<span>DM Flags</span>
+						<input type="number" name="dmflags" value="1835008" readonly="true" />
+						<button type="button" id="dmFlagsBtn">Manage</button>
+					</label>
+					<label>
+						<span>Map</span>
+						<div id="mapWrapper">
+							<select name="map">
+								<optgroup label="Allied Assault" data-game="aa" data-image="aa.png">
+									<option value="dm/mohdm1" data-game="aa" data-mode="all" data-image="maps/mohdm1.jpg">Southern France</option>
+									<option value="dm/mohdm2" data-game="aa" data-mode="all" data-image="maps/mohdm2.jpg">Destroyed Village</option>
+									<option value="dm/mohdm3" data-game="aa" data-mode="all" data-image="maps/mohdm3.jpg">Remagen</option>
+									<option value="dm/mohdm4" data-game="aa" data-mode="all" data-image="maps/mohdm4.jpg">The Crossroads</option>
+									<option value="dm/mohdm5" data-game="aa" data-mode="all" data-image="maps/mohdm5.jpg">Snowy Park</option>
+									<option value="dm/mohdm6" data-game="aa" data-mode="all" data-image="maps/mohdm6.jpg">Stalingrad</option>
+									<option value="dm/mohdm7" data-game="aa" data-mode="all" data-image="maps/mohdm7.jpg">Algiers</option>
+									<option value="obj/obj_team1" data-game="aa" data-mode="obj" data-image="maps/obj_team1.jpg">The Hunt</option>
+									<option value="obj/obj_team2" data-game="aa" data-mode="obj" data-image="maps/obj_team2.jpg">V2 Rocket Facility</option>
+									<option value="obj/obj_team3" data-game="aa" data-mode="obj" data-image="maps/obj_team3.jpg">Omaha Beach</option>
+									<option value="obj/obj_team4" data-game="aa" data-mode="obj" data-image="maps/obj_team4.jpg">The Bridge</option>
+								</optgroup>
+								<optgroup label="Spearhead" data-game="sh" data-image="sh.png">
+									<option value="obj/mp_ardennes_tow" data-game="sh" data-mode="tow" data-image="maps/mp_ardennes_tow.jpg">Ardennes</option>
+									<option value="dm/mp_bahnhof_dm" data-game="sh" data-mode="all" data-image="maps/mp_bahnhof_dm.jpg">Bahnhof</option>
+									<option value="dm/mp_bazaar_dm" data-game="sh" data-mode="all" data-image="maps/mp_bazaar_dm.jpg">Bazaar</option>
+									<option value="obj/mp_berlin_tow" data-game="sh" data-mode="tow" data-image="maps/mp_berlin_tow.jpg">Berlin</option>
+									<option value="dm/mp_brest_dm" data-game="sh" data-mode="all" data-image="maps/mp_brest_dm.jpg">Brest</option>
+									<option value="obj/mp_druckkammern_tow" data-game="sh" data-mode="tow" data-image="maps/mp_druckkammern_tow.jpg">Druckkammern</option>
+									<option value="obj/mp_flughafen_tow" data-game="sh" data-mode="tow" data-image="maps/mp_flughafen_tow.jpg">Flughafen</option>
+									<option value="dm/mp_gewitter_dm" data-game="sh" data-mode="all" data-image="maps/mp_gewitter_dm.jpg">Gewitter</option>
+									<option value="dm/mp_holland_dm" data-game="sh" data-mode="all" data-image="maps/mp_holland_dm.jpg">Holland</option>
+									<option value="dm/mp_malta_dm" data-game="sh" data-mode="all" data-image="maps/mp_malta_dm.jpg">Malta</option>
+									<option value="dm/mp_stadt_dm" data-game="sh" data-mode="all" data-image="maps/mp_stadt_dm.jpg">Stadt</option>
+									<option value="dm/mp_unterseite_dm" data-game="sh" data-mode="all" data-image="maps/mp_unterseite_dm.jpg">Unterseite</option>
+									<option value="dm/mp_verschneit_dm" data-game="sh" data-mode="all" data-image="maps/mp_verschneit_dm.jpg">Verschneit</option>
+								</optgroup>
+								<optgroup label="Breakthrough" data-game="bt" data-image="bt.png">
+									<option value="lib/mp_anzio_lib" data-game="bt" data-mode="lib" data-image="maps/mp_anzio_lib.jpg">Anzio</option>
+									<option value="obj/mp_bizertefort_obj" data-game="bt" data-mode="obj" data-image="maps/mp_bizertefort_obj.jpg">Bizerte Festung</option>
+									<option value="lib/mp_bizerteharbor_lib" data-game="bt" data-mode="lib" data-image="maps/mp_bizerteharbor_lib.jpg">Bizerte Harbor</option>
+									<option value="obj/mp_bologna_obj" data-game="bt" data-mode="obj" data-image="maps/mp_bologna_obj.jpg">Bologna</option>
+									<option value="obj/mp_castello_obj" data-game="bt" data-mode="obj" data-image="maps/mp_castello_obj.jpg">Castello</option>
+									<option value="obj/mp_kasserine_tow" data-game="bt" data-mode="tow" data-image="maps/mp_kasserine_tow.jpg">Kasserine</option>
+									<option value="obj/mp_montebattaglia_tow" data-game="bt" data-mode="tow" data-image="maps/mp_montebattaglia_tow.jpg">Monte Battaglia</option>
+									<option value="obj/mp_montecassino_tow" data-game="bt" data-mode="tow" data-image="maps/mp_montecassino_tow.jpg">Monte Cassino</option>
+									<option value="obj/mp_palermo_obj" data-game="bt" data-mode="obj" data-image="maps/mp_palermo_obj.jpg">Palermo</option>
+									<option value="lib/mp_ship_lib" data-game="bt" data-mode="lib" data-image="maps/mp_ship_lib.jpg">Stuckguter</option>
+									<option value="lib/mp_tunisia_lib" data-game="bt" data-mode="lib" data-image="maps/mp_tunisia_lib.jpg">Tunisia</option>
+								</optgroup>
+							</select>
+							<button type="button" id="addMap">Add To Rotation</button>
+						</div>
+					</label>
+					<div>
+						<span>Map Rotation</span>
+						<div id="mapRotationWrapper">
+							<ul id="mapRotation"></ul>
+						</div>
+						<textarea name="sv_maplist" rows="8"></textarea>
+					</div>
+					<label>
+						<span>Time Limit</span>
+						<br />
+						<input type="number" name="timelimit" value="0">
+					</label>
+					<label>
+						<span>Frag Limit</span>
+						<br />
+						<input type="number" name="fraglimit" value="0">
+					</label>
+					<label>
+						<span>Map Rotation Time</span>
+						<br />
+						<input type="number" name="maprotationtime" value="0">
+					</label>
+					<label>
+						<span>Round Reset Time</span>
+						<br />
+						<input type="number" name="roundlimit" value="0">
+					</label>
+					<label>
+						<span>Team Spawn Delay</span>
+						<br />
+						<input type="number" name="sv_team_spawn_interval" value="15">
+					</label>
+					<label>
+						<span>Inactive Spectate</span>
+						<br />
+						<input type="number" name="g_inactivespectate" value="60">
+					</label>
+					<label>
+						<span>Inactive Kick</span>
+						<br />
+						<input type="number" name="g_inactivekick" value="900">
+					</label>
+					<label>
+						<span>Teamkill Warning Threshold</span>
+						<br />
+						<input type="number" name="g_teamkillwarn" value="1">
+					</label>
+					<label>
+						<span>Teamkill Kick Threshold</span>
+						<br />
+						<input type="number" name="g_teamkillkick" value="3">
+					</label>
+					<label>
+						<span>Team Switch Delay</span>
+						<br />
+						<input type="number" name="g_teamswitchdelay" value="15">
+					</label>
+					<label>
+						<span>Invurnerable Time</span>
+						<br />
+						<input type="number" name="sv_invulnerabletime" value="3">
+					</label>
+					<label>
+						<span>Allow Round Join Time</span>
+						<br />
+						<input type="number" name="g_allowjointime" value="30">
+					</label>
+					<label>
+						<span>Gravity</span>
+						<br />
+						<input type="number" name="sv_gravity" value="800">
+					</label>
+					<label>
+						<span>DM Speed Multiplier</span>
+						<br />
+						<input type="number" name="sv_dmspeedmult" value="1.10" step="0.1">
+					</label>
+				</fieldset>
+				<fieldset data-tab="chat-options">
+					<strong>Chat Options</strong>
+					<label>
+						<input type="checkbox" name="g_instamsg_allowed" value="0" />
+						<span>Disable Voice Instant Messages</span>
+					</label>
+					<label>
+						<input type="checkbox" name="g_textmsg_allowed" value="0" />
+						<span>Disable Text Messages</span>
+					</label>
+					<label>
+						<span>Voice Instant Messages Delay (in ms)</span>
+						<br />
+						<input type="number" name="g_instamsg_minDelay" value="1000" />
+					</label>
+					<label>
+						<span>Text Messages Delay (in ms)</span>
+						<br />
+						<input type="number" name="g_textmsg_minDelay" value="1000" />
+					</label>
+				</fieldset>
+				<fieldset data-tab="custom-config">
+					<strong>Custom Configuration</strong>
+					<label>
+						<textarea name="custom_config" rows="20"></textarea>
+					</label>
+				</fieldset>
+				<div id="buttons">
+					<button type="submit">Save</button>
+					<button type="button" id="startServer">Start Server</button>
+				</div>
+			</form>
+		</main>
+		
+		<dialog id="dmflagsPopup">
+			<button type="button" class="dialog-close">&times;</button>
+			<h1>Manage DM Flags</h1>
+			<div id="dmflags">
+				<section>
+					<label>
+						<input type="checkbox" name="dmflags[]" value="1 << 3">
+						<span>No Falling Damage</span>
+					</label>
+					<label>
+						<input type="checkbox" name="dmflags[]" value="1 << 14">
+						<span>Infinite Ammo</span>
+					</label>
+					<label>
+						<input type="checkbox" name="dmflags[]" value="1 << 18">
+						<span>Lean While Running</span>
+					</label>
+					<label>
+						<input type="checkbox" name="dmflags[]" value="1 << 19">
+						<span>Old Style Sniper Rifles</span>
+					</label>
+					<label>
+						<input type="checkbox" name="dmflags[]" value="1 << 20">
+						<span>Axis Shotgun</span>
+					</label>
+					<label>
+						<input type="checkbox" name="dmflags[]" value="1 << 21">
+						<span>Allow Old Map Mines</span>
+					</label>
+				</section>
+				<section>
+					<label>
+						<input type="checkbox" name="dmflags[]" value="1 << 22">
+						<span>Ban Rifles</span>
+					</label>
+					<label>
+						<input type="checkbox" name="dmflags[]" value="1 << 23">
+						<span>Ban Snipers</span>
+					</label>
+					<label>
+						<input type="checkbox" name="dmflags[]" value="1 << 24">
+						<span>Ban SMG's</span>
+					</label>
+					<label>
+						<input type="checkbox" name="dmflags[]" value="1 << 25">
+						<span>Ban MG's</span>
+					</label>
+					<label>
+						<input type="checkbox" name="dmflags[]" value="1 << 26">
+						<span>Ban Rocket Launchers</span>
+					</label>
+					<label>
+						<input type="checkbox" name="dmflags[]" value="1 << 27">
+						<span>Ban Shotguns</span>
+					</label>
+					<label>
+						<input type="checkbox" name="dmflags[]" value="1 << 28">
+						<span>Ban Landmines</span>
+					</label>
+				</section>
+			</div>
+		</dialog>
+		
+		<script type="text/javascript" src="./assets/scripts/form.js"></script>
+		<script type="text/javascript" src="./assets/scripts/dropdown.js"></script>
+		<script type="text/javascript" src="./assets/scripts/draganddrop.js"></script>
+		<script type="text/javascript" src="./assets/scripts/dmflags.js"></script>
+		<script type="text/javascript" src="./assets/scripts/menu.js"></script>
+	</body>
+</html>
