@@ -1,6 +1,6 @@
 {
   "name": "opm-server-setup-utility",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "OpenMoHAA Server Setup Utility",
   "main": "main.js",
   "scripts": {
