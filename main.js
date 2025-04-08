@@ -101,7 +101,7 @@ ipcMain.handle('runServer', async (event, game) => {
 		} else if (os.platform() === 'darwin') {
 			//spawn('cd "' + rootPath + '" && ./omohaaded.multiarch', ['+set com_target_game ' + game + ' +exec "server.cfg"'], { cwd: rootPath, shell: true, detached: true, stdio: 'ignore' });
 		} else {
-			spawn('x-terminal-emulator -e bash -c \'cd "' + rootPath + '" && ./omohaaded.x86_64 +set com_target_game ' + game + ' +exec "server.cfg"\'', [], { cwd: rootPath, shell: true, detached: true, stdio: 'ignore' });
+			spawn('gnome-terminal -- bash -c \'cd "' + rootPath + '" && ./omohaaded.x86_64 +set com_target_game ' + game + ' +exec "server.cfg"\'', [], { cwd: rootPath, shell: true, detached: true, stdio: 'ignore' });
 		}
     });
 });
