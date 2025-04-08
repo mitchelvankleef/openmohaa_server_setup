@@ -46,7 +46,9 @@ app.whenReady().then(() => {
 	};
 	
 	if (app.isPackaged) {		
-		rootPath = process.env.PORTABLE_EXECUTABLE_DIR;
+		if (process?.env?.PORTABLE_EXECUTABLE_DIR) {
+			rootPath = process.env.PORTABLE_EXECUTABLE_DIR;
+		}
 	
 		const executableFile = getExecutable();
 	
@@ -97,9 +99,9 @@ ipcMain.handle('runServer', async (event, game) => {
 		if (os.platform() === 'win32') {
 			spawn('cd /d ' + rootPath + ' && omohaaded.x86_64.exe', ['+set com_target_game ' + game + ' +exec "server.cfg"'], { shell: true, detached: true, stdio: 'ignore' });
 		} else if (os.platform() === 'darwin') {
-			spawn('cd ' + rootPath + ' && ./omohaaded.multiarch', ['+set com_target_game ' + game + ' +exec "server.cfg"'], { shell: true, detached: true, stdio: 'ignore' });
+			//spawn('cd "' + rootPath + '" && ./omohaaded.multiarch', ['+set com_target_game ' + game + ' +exec "server.cfg"'], { cwd: rootPath, shell: true, detached: true, stdio: 'ignore' });
 		} else {
-			spawn('cd ' + rootPath + ' && ./omohaaded.x86_64', ['+set com_target_game ' + game + ' +exec "server.cfg"'], { shell: true, detached: true, stdio: 'ignore' });
+			spawn('x-terminal-emulator -e bash -c \'cd "' + rootPath + '" && ./omohaaded.x86_64 +set com_target_game ' + game + ' +exec "server.cfg"\'', [], { cwd: rootPath, shell: true, detached: true, stdio: 'ignore' });
 		}
     });
 });
