@@ -472,7 +472,7 @@ input[type="number"] {
 
 #mapPopover {
 	position: absolute;
-	right: calc(100% + 1rem);
+	left: 100%;
 	border: 1px solid #000;
 	width: 16rem;
 	
