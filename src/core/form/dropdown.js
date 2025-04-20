@@ -1,13 +1,15 @@
-document.querySelectorAll('select').forEach((select) => {
-	addCustomDropdown(select);
-	initMapPopover();
-	
-	select.addEventListener('change', function () {
-		removeCustomDropdowns();
-		document.querySelectorAll('select').forEach((select) => {
-			addCustomDropdown(select);
-		});
+window.addEventListener('modulesLoaded', function() {
+	document.querySelectorAll('select').forEach((select) => {
+		addCustomDropdown(select);
 		initMapPopover();
+		
+		select.addEventListener('change', function () {
+			removeCustomDropdowns();
+			document.querySelectorAll('select').forEach((select) => {
+				addCustomDropdown(select);
+			});
+			initMapPopover();
+		});
 	});
 });
 

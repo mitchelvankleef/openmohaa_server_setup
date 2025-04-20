@@ -1,0 +1,29 @@
+{
+	"name": "Chat Options",
+	"fields": [
+		{
+			"name": "g_instamsg_allowed",
+			"label": "Allow Voice Instant Messages",
+			"type": "boolean",
+			"default": 1
+		},
+		{
+			"name": "g_textmsg_allowed",
+			"label": "Allow Text Messages",
+			"type": "boolean",
+			"default": 1
+		},
+		{
+			"name": "g_instamsg_minDelay",
+			"label": "Voice Instant Messages Delay (in ms)",
+			"type": "number",
+			"default": 1000
+		},
+		{
+			"name": "g_textmsg_minDelay",
+			"label": "Text Messages Delay (in ms)",
+			"type": "number",
+			"default": 1000
+		}
+	]
+}

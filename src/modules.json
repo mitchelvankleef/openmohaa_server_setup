@@ -1,0 +1,24 @@
+{
+	"modules": [
+		{
+			"file": "general",
+			"label": "General"
+		},
+		{
+			"file": "network_options",
+			"label": "Network Options"
+		},
+		{
+			"file": "game_options",
+			"label": "Game Options"
+		},
+		{
+			"file": "chat_options",
+			"label": "Chat Options"
+		},
+		{
+			"file": "custom_configuration",
+			"label": "Custom Configuration"
+		}
+	]
+}

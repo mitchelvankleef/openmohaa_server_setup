@@ -1,0 +1,501 @@
+{
+	"name": "Game Options",
+	"fields": [
+		{
+			"name": "g_gametype",
+			"label": "Gametype",
+			"type": "dropdown",
+			"options": [
+				{
+					"label": "Free For All",
+					"value": 1,
+					"game": 0
+				},
+				{
+					"label": "Team Deathmatch",
+					"value": 2,
+					"game": 0
+				},
+				{
+					"label": "Round Based",
+					"value": 3,
+					"game": 0
+				},
+				{
+					"label": "Objective",
+					"value": 4,
+					"game": 0
+				},
+				{
+					"label": "Tug-of-War",
+					"value": 5,
+					"game": 1
+				},
+				{
+					"label": "Liberation",
+					"value": 6,
+					"game": 2
+				}
+			],
+			"default": 1
+		},		
+		{
+			"name": "g_healthdrop",
+			"label": "Health Drop",
+			"type": "boolean",
+			"default": 1
+		},
+		{
+			"name": "g_realismmode",
+			"label": "Realism Mode",
+			"type": "boolean",
+			"default": 0
+		},		
+		{
+			"name": "g_teamdamage",
+			"label": "Team Damage",
+			"type": "boolean",
+			"default": 1
+		},
+		{
+			"name": "g_teambalance",
+			"label": "Balance Teams",
+			"type": "boolean",
+			"default": 1
+		},
+		{
+			"name": "g_forceteamspectate",
+			"label": "Force Team Spectate",
+			"type": "boolean",
+			"default": 1
+		},
+		{
+			"name": "g_forceready",
+			"label": "Force Ready",
+			"type": "boolean",
+			"default": 0
+		},		
+		{
+			"name": "g_forcespawn",
+			"label": "Force Spawn",
+			"type": "boolean",
+			"default": 0
+		},
+		{
+			"name": "g_allowvote",
+			"label": "Allow Voting",
+			"type": "boolean",
+			"default": 0
+		},
+		{
+			"name": "g_healrate",
+			"label": "Heal Rate",
+			"type": "dropdown",
+			"options": [
+				{
+					"label": "Instant",
+					"value": 0
+				},
+				{
+					"label": "5 per sec",
+					"value": 5
+				},
+				{
+					"label": "10 per sec",
+					"value": 10
+				},
+				{
+					"label": "20 per sec",
+					"value": 20
+				}
+			],
+			"default": 0
+		},
+		{
+			"name": "dmflags",
+			"label": "DM Flags",
+			"type": "number",
+			"default": 1835008,
+			"buttons": [
+				{
+					"label": "Manage",
+					"function": "manageDmFlags"
+				}
+			]
+		},	
+		{
+			"name": "map",
+			"label": "Map",
+			"type": "dropdown",
+			"options": [
+				{
+					"type": "optgroup",
+					"label": "Allied Assault",
+					"game": 0,
+					"image": "aa.avif",
+					"suboptions": [
+						{
+							"label": "Southern France",
+							"value": "dm/mohdm1",
+							"game": 0,
+							"mode": "all",
+							"image": "maps/mohdm1.avif"
+						},
+						{
+							"label": "Destroyed Village",
+							"value": "dm/mohdm2",
+							"game": 0,
+							"mode": "all",
+							"image": "maps/mohdm2.avif"
+						},
+						{
+							"label": "Remagen",
+							"value": "dm/mohdm3",
+							"game": 0,
+							"mode": "all",
+							"image": "maps/mohdm3.avif"
+						},
+						{
+							"label": "The Crossroads",
+							"value": "dm/mohdm4",
+							"game": 0,
+							"mode": "all",
+							"image": "maps/mohdm4.avif"
+						},
+						{
+							"label": "Snowy Park",
+							"value": "dm/mohdm5",
+							"game": 0,
+							"mode": "all",
+							"image": "maps/mohdm5.avif"
+						},
+						{
+							"label": "Stalingrad",
+							"value": "dm/mohdm6",
+							"game": 0,
+							"mode": "all",
+							"image": "maps/mohdm6.avif"
+						},
+						{
+							"label": "Algiers",
+							"value": "dm/mohdm7",
+							"game": 0,
+							"mode": "all",
+							"image": "maps/mohdm7.avif"
+						},
+						{
+							"label": "The Hunt",
+							"value": "obj/obj_team1",
+							"game": 0,
+							"mode": "obj",
+							"image": "maps/obj_team1.avif"
+						},
+						{
+							"label": "V2 Rocket Facility",
+							"value": "obj/obj_team2",
+							"game": 0,
+							"mode": "obj",
+							"image": "maps/obj_team2.avif"
+						},
+						{
+							"label": "Omaha Beach",
+							"value": "obj/obj_team3",
+							"game": 0,
+							"mode": "obj",
+							"image": "maps/obj_team3.avif"
+						},
+						{
+							"label": "The Bridge",
+							"value": "obj/obj_team4",
+							"game": 0,
+							"mode": "obj",
+							"image": "maps/obj_team4.avif"
+						}
+					]
+				},
+				{
+					"type": "optgroup",
+					"label": "Spearhead",
+					"game": 1,
+					"image": "sh.avif",
+					"suboptions": [
+						{
+							"label": "Ardennes",
+							"value": "obj/mp_ardennes_tow",
+							"game": 1,
+							"mode": "tow",
+							"image": "maps/mp_ardennes_tow.avif"
+						},
+						{
+							"label": "Bahnhof",
+							"value": "dm/mp_bahnhof_dm",
+							"game": 1,
+							"mode": "all",
+							"image": "maps/mp_bahnhof_dm.avif"
+						},
+						{
+							"label": "Bazaar",
+							"value": "dm/mp_bazaar_dm",
+							"game": 1,
+							"mode": "all",
+							"image": "maps/mp_bazaar_dm.avif"
+						},
+						{
+							"label": "Berlin",
+							"value": "obj/mp_berlin_tow",
+							"game": 1,
+							"mode": "tow",
+							"image": "maps/mp_berlin_tow.avif"
+						},
+						{
+							"label": "Brest",
+							"value": "dm/mp_brest_dm",
+							"game": 1,
+							"mode": "all",
+							"image": "maps/mp_brest_dm.avif"
+						},
+						{
+							"label": "Druckkammern",
+							"value": "obj/mp_druckkammern_tow",
+							"game": 1,
+							"mode": "tow",
+							"image": "maps/mp_druckkammern_tow.avif"
+						},
+						{
+							"label": "Flughafen",
+							"value": "obj/mp_flughafen_tow",
+							"game": 1,
+							"mode": "tow",
+							"image": "maps/mp_flughafen_tow.avif"
+						},
+						{
+							"label": "Gewitter",
+							"value": "dm/mp_gewitter_dm",
+							"game": 1,
+							"mode": "all",
+							"image": "maps/mp_gewitter_dm.avif"
+						},
+						{
+							"label": "Holland",
+							"value": "dm/mp_holland_dm",
+							"game": 1,
+							"mode": "all",
+							"image": "maps/mp_holland_dm.avif"
+						},
+						{
+							"label": "Malta",
+							"value": "dm/mp_malta_dm",
+							"game": 1,
+							"mode": "all",
+							"image": "maps/mp_malta_dm.avif"
+						},
+						{
+							"label": "Stadt",
+							"value": "dm/mp_stadt_dm",
+							"game": 1,
+							"mode": "all",
+							"image": "maps/mp_stadt_dm.avif"
+						},
+						{
+							"label": "Unterseite",
+							"value": "dm/mp_unterseite_dm",
+							"game": 1,
+							"mode": "all",
+							"image": "maps/mp_unterseite_dm.avif"
+						},
+						{
+							"label": "Verschneit",
+							"value": "dm/mp_verschneit_dm",
+							"game": 1,
+							"mode": "all",
+							"image": "maps/mp_verschneit_dm.avif"
+						}
+					]
+				},
+				{
+					"type": "optgroup",
+					"label": "Breakthrough",
+					"game": 2,
+					"image": "bt.avif",
+					"suboptions": [
+						{
+							"label": "Anzio",
+							"value": "lib/mp_anzio_lib",
+							"game": 2,
+							"mode": "lib",
+							"image": "maps/mp_anzio_lib.avif"
+						},
+						{
+							"label": "Bizerte Festung",
+							"value": "obj/mp_bizertefort_obj",
+							"game": 2,
+							"mode": "obj",
+							"image": "maps/mp_bizertefort_obj.avif"
+						},
+						{
+							"label": "Bizerte Harbor",
+							"value": "lib/mp_bizerteharbor_lib",
+							"game": 2,
+							"mode": "obj",
+							"image": "maps/mp_bizerteharbor_lib.avif"
+						},
+						{
+							"label": "Bologna",
+							"value": "obj/mp_bologna_obj",
+							"game": 2,
+							"mode": "obj",
+							"image": "maps/mp_bologna_obj.avif"
+						},
+						{
+							"label": "Castello",
+							"value": "obj/mp_castello_obj",
+							"game": 2,
+							"mode": "obj",
+							"image": "maps/mp_castello_obj.avif"
+						},
+						{
+							"label": "Kasserine",
+							"value": "obj/mp_kasserine_tow",
+							"game": 2,
+							"mode": "tow",
+							"image": "maps/mp_kasserine_tow.avif"
+						},
+						{
+							"label": "Monte Battaglia",
+							"value": "obj/mp_montebattaglia_tow",
+							"game": 2,
+							"mode": "tow",
+							"image": "maps/mp_montebattaglia_tow.avif"
+						},
+						{
+							"label": "Monte Cassino",
+							"value": "obj/mp_montecassino_tow",
+							"game": 2,
+							"mode": "tow",
+							"image": "maps/mp_montecassino_tow.avif"
+						},
+						{
+							"label": "Palermo",
+							"value": "obj/mp_palermo_obj",
+							"game": 2,
+							"mode": "obj",
+							"image": "maps/mp_palermo_obj.avif"
+						},
+						{
+							"label": "Stuckguter",
+							"value": "lib/mp_ship_lib",
+							"game": 2,
+							"mode": "lib",
+							"image": "maps/mp_ship_lib.avif"
+						},
+						{
+							"label": "Tunisia",
+							"value": "lib/mp_tunisia_lib",
+							"game": 2,
+							"mode": "lib",
+							"image": "maps/mp_tunisia_lib.avif"
+						}
+					]
+				}
+			],
+			"buttons": [
+				{
+					"label": "Add Map",
+					"function": "addMap",
+					"id": "btnAddMap"
+				}
+			]
+		},
+		{
+			"name": "sv_maplist",
+			"label": "Map Rotation",
+			"type": "textarea",
+			"rows": 8
+		},
+		{
+			"name": "timelimit",
+			"label": "Time Limit",
+			"type": "number",
+			"default": 0
+		},
+		{
+			"name": "fraglimit",
+			"label": "Frag Limit",
+			"type": "number",
+			"default": 0
+		},
+		{
+			"name": "maprotationtime",
+			"label": "Map Rotation Time",
+			"type": "number",
+			"default": 0
+		},
+		{
+			"name": "roundlimit",
+			"label": "Round Reset Time",
+			"type": "number",
+			"default": 0
+		},
+		{
+			"name": "sv_team_spawn_interval",
+			"label": "Team Spawn Delay",
+			"type": "number",
+			"default": 15
+		},
+		{
+			"name": "g_inactivespectate",
+			"label": "Inactive Spectate",
+			"type": "number",
+			"default": 60
+		},
+		{
+			"name": "g_inactivekick",
+			"label": "Inactive Kick",
+			"type": "number",
+			"default": 900
+		},
+		{
+			"name": "g_teamkillwarn",
+			"label": "Teamkill Warning Threshold",
+			"type": "number",
+			"default": 1
+		},
+		{
+			"name": "g_teamkillkick",
+			"label": "Teamkill Kick Threshold",
+			"type": "number",
+			"default": 3
+		},
+		{
+			"name": "g_teamswitchdelay",
+			"label": "Team Switch Delay",
+			"type": "number",
+			"default": 15
+		},
+		{
+			"name": "sv_invulnerabletime",
+			"label": "Invurnerable Time",
+			"type": "number",
+			"default": 3
+		},
+		{
+			"name": "g_allowjointime",
+			"label": "Allow Round Join Time",
+			"type": "number",
+			"default": 30
+		},
+		{
+			"name": "sv_gravity",
+			"label": "Gravity",
+			"type": "number",
+			"default": 800
+		},
+		{
+			"name": "sv_dmspeedmult",
+			"label": "DM Speed Multiplier",
+			"type": "number",
+			"default": 1.10,
+			"step": 0.1
+		}
+	]
+}

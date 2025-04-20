@@ -1,0 +1,89 @@
+{
+	"name": "General",
+	"fields": [
+		{
+			"name": "com_target_game",
+			"label": "Game",
+			"type": "dropdown",
+			"options": [
+				{
+					"label": "Allied Assault",
+					"image": "aa.avif",
+					"game": 0,
+					"value": 0
+				},
+				{
+					"label": "Spearhead",
+					"image": "sh.avif",
+					"game": 1,
+					"value": 1
+				},
+				{
+					"label": "Breakthrough",
+					"image": "bt.avif",
+					"game": 2,
+					"value": 2
+				}
+			],
+			"default": 0
+		},
+		{
+			"name": "sv_hostname",
+			"label": "Server Name",
+			"type": "text",
+			"default": ""
+		},
+		{
+			"name": "rconpassword",
+			"label": "RCON Password",
+			"type": "password",
+			"default": ""
+		},
+		{
+			"name": "sv_privatePassword",
+			"label": "Private Password",
+			"type": "password",
+			"default": ""
+		},
+		{
+			"name": "sv_maxclients",
+			"label": "Max Clients",
+			"type": "number",
+			"default": 16,
+			"min": 0,
+			"max": 64
+		},
+		{
+			"name": "sv_privateClients",
+			"label": "Private Clients",
+			"type": "number",
+			"default": 0,
+			"min": 0,
+			"max": 64
+		},
+		{
+			"name": "sv_maxbots",
+			"label": "Max Bots",
+			"type": "number",
+			"default": 16,
+			"min": 0,
+			"max": 64
+		},
+		{
+			"name": "sv_numbots",
+			"label": "Number of Bots",
+			"type": "number",
+			"default": 16,
+			"min": 0,
+			"max": 64
+		},
+		{
+			"name": "sv_minPlayers",
+			"label": "Minimum Players/Bots",
+			"type": "number",
+			"default": 16,
+			"min": 0,
+			"max": 64
+		}
+	]
+}

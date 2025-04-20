@@ -1,0 +1,88 @@
+{
+	"name": "Network Options",
+	"fields": [
+		{
+			"name": "net_enabled",
+			"label": "IP Mode",
+			"type": "dropdown",
+			"options": [
+				{
+					"label": "IPv4",
+					"value": 1
+				},
+				{
+					"label": "IPv4",
+					"value": 2
+				},
+				{
+					"label": "IPv4 + IPv6",
+					"value": 3
+				}
+			],
+			"note": "WARNING: Server won't list in master server with IPv4 disabled!",
+			"default": 3
+		},		
+		{
+			"name": "net_port",
+			"label": "Net Port",
+			"type": "number",
+			"default": 12203
+		},		
+		{
+			"name": "sv_minping",
+			"label": "Minimum Ping",
+			"type": "number",
+			"default": 0
+		},		
+		{
+			"name": "sv_maxping",
+			"label": "Maximum Ping",
+			"type": "number",
+			"default": 0
+		},		
+		{
+			"name": "sv_maxrate",
+			"label": "Maximum Rate",
+			"type": "number",
+			"default": 0
+		},		
+		{
+			"name": "sv_fps",
+			"label": "Server Framerate",
+			"type": "number",
+			"default": 20
+		},
+		{
+			"name": "sv_netoptimize",
+			"label": "Network Optimization",
+			"type": "dropdown",
+			"options": [
+				{
+					"label": "Disabled",
+					"value": 0
+				},
+				{
+					"label": "Enabled (moving entities only)",
+					"value": 1
+				},
+				{
+					"label": "Enabled (always)",
+					"value": 2
+				}
+			],
+			"default": 0
+		},	
+		{
+			"name": "sv_floodProtection",
+			"label": "Flood Protection",
+			"type": "boolean",
+			"default": 1
+		},
+		{
+			"name": "sv_gamespy",
+			"label": "Show in Master Server List",
+			"type": "boolean",
+			"default": 1
+		}
+	]
+}

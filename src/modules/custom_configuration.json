@@ -1,0 +1,10 @@
+{
+	"name": "Custom Configuration",
+	"fields": [
+		{
+			"name": "custom_config",
+			"type": "textarea",
+			"rows": 20
+		}
+	]
+}
