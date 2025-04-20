@@ -1,7 +1,11 @@
+/**
+ * Open DM flags manager dialog
+ */
 function manageDmFlags() {
 	document.getElementById('dmflagsPopup').showModal();
 }
 
+/* Initialize DM flags dialog */
 window.addEventListener('modulesLoaded', function() {
 	const dmFlagCheckboxes = Array
 		.from(

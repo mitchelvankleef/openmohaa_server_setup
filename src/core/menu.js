@@ -1,10 +1,12 @@
 const menuButton = document.getElementById('menu');
 const navigation = document.querySelector('nav');
 
+/* Initialize menu button */
 menuButton.addEventListener('click', function() {
 	navigation.classList.add('active');
 });
 
+/* Initialize menu */
 window.addEventListener('modulesLoaded', function() {
 	const navItems	= document.querySelectorAll('nav ul li');
 	const modules	= document.querySelectorAll('form fieldset');

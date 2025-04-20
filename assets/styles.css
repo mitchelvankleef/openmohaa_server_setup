@@ -254,7 +254,7 @@ form fieldset {
 	}
 }
 
-button[type="submit"], #startServer {
+button[type="submit"], #btnStartServer {
 	grid-column: span 2;
 	border: 0;
 	background: #ddd;
@@ -351,8 +351,8 @@ select, input:not([type="checkbox"]):not([type="radio"]), textarea {
 	background: #ddd;
 }
 
-select, input[type="text"], input[type="password"] {
-	width: 50%;
+input[type="text"], input[type="password"] {
+	width: 100%;
 	min-width: 10rem;
 }
 
@@ -381,7 +381,9 @@ label div.fieldWrapper {
 		width: 100%;
 	}
 	
-	&:has(select) {
+	&:has(select),
+	&:has(input[type="text"]),
+	&:has(input[type="password"]) {
 		width: 50%;
 	}
 }

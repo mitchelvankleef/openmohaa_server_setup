@@ -1,3 +1,4 @@
+/* Initialize all dropdowns */
 window.addEventListener('modulesLoaded', function() {
 	document.querySelectorAll('select').forEach((select) => {
 		addCustomDropdown(select);
@@ -13,6 +14,7 @@ window.addEventListener('modulesLoaded', function() {
 	});
 });
 
+/* Close select dropdown when clicking outside */
 document.addEventListener('click', function (e) {	
 	document.querySelectorAll('.customSelectDropdown').forEach((select) => {
 		if (e.target.tagName == 'SELECT') {
@@ -26,6 +28,10 @@ document.addEventListener('click', function (e) {
 	});
 });
 
+/**
+ * Add a custom dropdown for a select element
+ * @param	{HTMLSelectElement}	originalSelect 	The select element
+ */
 function addCustomDropdown(originalSelect) {
 	originalSelect.style.display = 'none';
 	
@@ -96,12 +102,18 @@ function addCustomDropdown(originalSelect) {
 	customSelectWrapper.append(customSelectDropdown);
 }
 
+/**
+ * Remove all custom dropdowns
+ */
 function removeCustomDropdowns() {
 	document.querySelectorAll('.customSelectWrapper').forEach((select) => {
 		select.remove();
 	});
 }
 
+/**
+ * Initialize the map preview popover
+ */
 function initMapPopover() {
 	const mapImages = document.querySelectorAll('select[name="map"] + .customSelectWrapper li:not(.optgroup) img');
 

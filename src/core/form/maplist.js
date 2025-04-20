@@ -1,3 +1,4 @@
+/* Initialize the map rotation list field */
 window.addEventListener('modulesLoaded', function() {	
 	const mapSelect	= document.querySelector('[name="map"]');		
 	const mapList 	= document.querySelector('[name="sv_maplist"]');
@@ -37,7 +38,7 @@ function addMap(element) {
 
 /**
  * Add map to maplist
- * @param  {HTMLElement}	selectedOption	The HTML element that is the selected option
+ * @param  {HTMLSelectElement}	selectedOption	The HTML element that is the selected option
  */
 function addMapToList(selectedOption) {	
 	const mapRotation = document.getElementById('mapRotation');
